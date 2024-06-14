@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #eaeaea;
+}
+
+.navbar {
+    background-color: #ffe600;
+    color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit
+}
+
+label {
+    font-weight: 500;
+    font-size: 18px
+}
+
+p {
+    color: grey;
+}
+
+.navbar {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.auction_container {
+    display: flex;
+    background-color: white;
+    margin: 2px;
+    padding-left: 10px;
+}
+
+.auction_title {
+    font-size: 20px;
+    font-weight: 300;
+
+    /* Hides text beyound two lines of text*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.auction_title:hover {
+    color: blue;
+    opacity: 1;
+}
+
+.auction_price {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.auction-info {
+    margin-top: 5px;
+    padding-top: 5px;
+    opacity: 0.75;
+    font-size: 14px;
+}
+
+.auction_image {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auction_image img {
+    width: 100%;
+    height: auto;
+}
+
+.auction_image i {
+    font-size: 60px;
+}
+
+#category_container {
+    background-color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#category_container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#category_container:hover a {
+    color: black;
+    text-decoration: none;
+}
+
+#remove {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 15px;
+    color: blue;
+}
+
+.btn {
+    font-weight: 500;
+}
+
+.input-container {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.listing-container {
+    background-color: white;
+    padding: 40px;
+}
+
+.listing-flex {
+    display: flex;
+}
+
+.listing-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.listing-info {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 20px 10px;
+    width: 400px;
+}
+
+.add_to_watchlist {
+    background-color: rgba(65, 137, 230, .15);
+    color: #3483fa;
+  }
+
+.add_to_watchlist:hover {
+    background-color: rgba(65, 137, 230, .2);
+    color: #3483fa;
+  }
+
+  #bid_watchlist_buttons button,
+  #bid_watchlist_buttons a {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+.listing-price {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.listing-image {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listing-image img {
+    max-width: 600px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.listing-image i {
+    font-size: 120px;
+}
+
+
+.listing-description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.listing-description h4 {
+    font-size: 24px;
+    font-weight: 400
+}
+
+.listing-description div {
+    color: #666;
+    font-size: 20px;
+}
+
+.listing-comments {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.listing-comments h4 {
+    font-size: 24px;
+    font-weight: 400
+}
+
+.listing-comments p {
+    font-size: 16px;
+    max-width: 800px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.listing-comments a {
+    height: 48px;
+    padding-top: 10px;
+}
+
+#post-comment {
+    display: flex;
+    align-items: center;
+}
+
+#post-comment textarea {
+    max-width: 700px;
+    height: 48px;
+    resize: none;
+}
+
+#post-comment button {
+    height: 48px;
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        padding: 0;
+        width: 100%;
+    }
+
+    .auction_title {
+        font-size: 13px;
+        font-weight: 500;
+        max-width: 175px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .auction_price {
+        font-size: 18px;
+    }
+
+    .auction_image {
+        width: 120px;
+        height: auto;
+    }
+
+    .listing-container {
+        padding: 10px;
+    }
+
+    .listing-flex {
+        display: block;
+    }
+
+    .listing-info {
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .listing-image {
+        width: 100%;
+    }
+
+    #post-comment {
+        display: block;
+    }
+
+    #post-comment button,
+    #post-comment a {
+        margin-top: 10px;
+        width: 100%;
+
+    }
+
+    .input-container input,
+    .input-container a {
+        margin-top: 5px;
+    }
+
+    .input-container {
+        margin: 5px;
+    }
+
+    #create-listing-button {
+        width: 100%
+    }
+  }

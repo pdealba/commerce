@@ -1,0 +1,71 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Watchlist {% endblock %}
+
+{% block body %}
+<div class="container">
+
+  {% if success %}
+  <div class="mx-auto mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+      {{ success }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
+
+  <h2 class="mt-5 mb-4">Watchlist</h2>
+  <hr>
+  <div class="row">
+    {% for auction in watchlist %}
+    <div class="col-12">
+      <div class="auction_container">
+        <div class="auction_image">
+          {% if auction.image%}
+          <img src="{{ auction.image }}" class="" width=100 alt="Auction Image">
+          {% else %}
+          <i class="bi bi-card-image"></i>
+          {% endif %}
+        </div>
+        <div class="p-4">
+          <a class="auction_title" href="{% url 'show_listing' auction_id=auction.id%}">
+            {{ auction.title }}
+          </a>
+          <div class="auction_price">$ {{ auction.current_bid }}</div>
+          <div class="auction-info">
+            <div>Starting Bid: $ {{ auction.price }}</div>
+            <div>Number of Bids: {{ auction.total_bids }}</div>
+          </div>
+          <div>
+            <form action="{% url 'watchlist' %}" method="post">
+              {% csrf_token %}
+              <input name="auction_id" value="{{auction.id}}" type="hidden">
+              <input name="action" value="remove" type="hidden">
+              <button id="remove" type="submit">Remove</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="ml-3">Watchlist is empty!</p>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+<!--
+  {% for auction in watchlist%}
+  <div class="card">
+    <img src="{{auction.image}}" width=100 alt="Auction Image">
+    <div class="card-body">
+      <a href="{% url 'show_listing' auction_id=auction.id %}" ><h5 class="card-title">{{auction.title}}</h5></a>
+      <p class="card-text">{{auction.description}}</p>
+      <p class="card-text">{{auction.price}}</p>
+    </div>
+  </div>
+  {% empty %}
+  <h1>Watchlist is empty!</h1>
+  {% endfor %}
+-->
+{% endblock %}
